@@ -8,8 +8,6 @@ import ProductDetails from "./pages/ProductDetails";
 import Checkout from "./pages/Checkout";
 import Cart from "./pages/Cart";
 import Account from "./pages/Account";
-import Orders from "./pages/Orders";
-import ChangePassword from "./pages/ChangePassword";
 import Footer from "./components/Footer";
 
 function App() {
@@ -26,8 +24,6 @@ function App() {
             <Route path="/cart" element={<Cart/>}/>
             <Route path="/checkout" element={<Checkout/>}/>
             <Route path="/account" element={<Account/>}/>
-            <Route path="/orders" element={<Orders/>}/>
-            <Route path="/change-password" element={<ChangePassword/>}/>
           </Routes>
         </main>
         <Footer />

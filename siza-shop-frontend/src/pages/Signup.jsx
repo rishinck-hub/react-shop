@@ -3,7 +3,8 @@ import API from "../services/api";
 import TimedModal from "../components/TimedModal";
 
 function Signup() {
-    const[name,setName] = useState("")
+    const[firstName,setFirstName] = useState("")
+    const[lastName,setLastName] = useState("")
     const[email,setEmail] = useState("")
     const[password,setPassword] = useState("")
     const[type,setType] = useState("password")
@@ -15,8 +16,9 @@ function Signup() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const fullName = `${firstName} ${lastName}`.trim()
         try {await API.post("/users",{
-            name,
+            name: fullName,
             email,
             password,
             avatar:"https://i.pravatar.cc/300"
@@ -24,7 +26,11 @@ function Signup() {
         showModal("User created", "success")
         } catch(err) {
             console.error(err)
-            showModal("Signup failed", "error")
+            if (err?.response?.status === 409) {
+                showModal("User already exists", "error")
+            } else {
+                showModal("Signup failed", "error")
+            }
         }
     };
 
@@ -46,7 +52,8 @@ function Signup() {
             />
             <form className="form-card glass-card" onSubmit={handleSubmit}>
                 <h2>Signup</h2>
-                <input type="text" placeholder="Name" onChange={(e)=>setName(e.target.value)} />
+            <input type="text" placeholder="First name" onChange={(e)=>setFirstName(e.target.value)} />
+            <input type="text" placeholder="Last name" onChange={(e)=>setLastName(e.target.value)} />
                 <input type="email" placeholder="Email" onChange={(e)=>setEmail(e.target.value)}/>
                 <input type={type} placeholder="password" onChange={(e)=>setPassword(e.target.value)} />
                 <button type="button" onClick={handleToggle}>{type=='password' ? 'Show' : 'Hide'}</button>
