@@ -65,7 +65,7 @@ function Cart(){
    <h3>Total: ${total}</h3>
 
    <button type="button" onClick={clearCart}>
-    Place Order
+    Checkout
    </button>
 
   </div>
