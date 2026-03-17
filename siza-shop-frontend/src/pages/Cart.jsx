@@ -19,7 +19,17 @@ function Cart(){
    {cart.map(item=>(
     <div className="cart-item" key={item.id}>
 
-     <h3>{item.title}</h3>
+     <div className="cart-item-header">
+      <img
+       className="cart-thumb"
+       src={item.images?.[0]}
+       alt={item.title}
+      />
+      <div>
+       <h3>{item.title}</h3>
+       <p>${item.price}</p>
+      </div>
+     </div>
 
      <div className="qty-controls">
       <button

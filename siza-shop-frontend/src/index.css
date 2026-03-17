@@ -226,6 +226,54 @@ a{
   border-radius:20px;
 }
 
+.footer{
+  max-width:1200px;
+  margin:40px auto 28px;
+  padding:20px 22px;
+  border-radius:18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+}
+
+.footer-brand h3{
+  margin:0 0 6px;
+  font-family:"Space Grotesk", "Manrope", sans-serif;
+}
+
+.footer-brand p{
+  margin:0;
+  color:var(--muted);
+}
+
+.footer-links{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  padding:6px 12px;
+  border-radius:999px;
+  border:1px solid transparent;
+  transition:all 0.2s ease;
+}
+
+.footer-links a:hover{
+  border-color:var(--stroke);
+  background:rgba(255,255,255,0.08);
+}
+
+.footer-meta{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:4px;
+  color:var(--muted);
+  font-size:0.9rem;
+}
+
 .page-section{
   max-width:720px;
   margin:20px auto;
@@ -240,6 +288,21 @@ a{
   background:rgba(255,255,255,0.06);
   border:1px solid rgba(255,255,255,0.12);
   margin-bottom:12px;
+}
+
+.cart-item-header{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:8px;
+}
+
+.cart-thumb{
+  width:68px;
+  height:68px;
+  border-radius:12px;
+  object-fit:cover;
+  border:1px solid rgba(255,255,255,0.2);
 }
 
 input,
@@ -356,5 +419,14 @@ button[type="button"]{
   .toolbar{
     flex-direction:column;
     align-items:stretch;
+  }
+
+  .footer{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .footer-meta{
+    align-items:center;
   }
 }

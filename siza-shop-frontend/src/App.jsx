@@ -10,6 +10,7 @@ import Cart from "./pages/Cart";
 import Account from "./pages/Account";
 import Orders from "./pages/Orders";
 import ChangePassword from "./pages/ChangePassword";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/change-password" element={<ChangePassword/>}/>
           </Routes>
         </main>
+        <Footer />
       </div>
     </BrowserRouter>
   )
